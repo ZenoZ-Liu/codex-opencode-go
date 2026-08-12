@@ -1,0 +1,19 @@
+# Example ~/.codex/config.toml for OpenCode Go
+# ------------------------------------------------------------------
+# You don't need this file by hand — run ./setup-codex-opencode.sh
+# and it is generated for you. This example is for reference / manual
+# configuration.
+#
+# IMPORTANT: base_url / wire_api / experimental_bearer_token MUST be
+# inside a [model_providers.<id>] block. At the top level they are
+# silently ignored by Codex, which then falls back to the default
+# OpenAI endpoint and prompts you to log in.
+
+model = "deepseek-v4-flash"          # any model from https://opencode.ai/zen/go/v1/models
+model_provider = "opencode"
+
+[model_providers.opencode]
+name = "OpenCode Go"
+base_url = "https://opencode.ai/zen/go/v1"
+wire_api = "responses"
+experimental_bearer_token = "sk-YOUR_OPENCODE_GO_KEY"   # get one at https://opencode.ai/auth
